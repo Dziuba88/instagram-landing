@@ -1,0 +1,129 @@
+$gutter: 20px !default;
+$columns: 12 !default;
+
+$mobile: 768px !default;
+$tablet: 1000px !default;
+$notebook: 1220px !default;
+
+// Media Breakpoints //
+    @mixin mobile {
+      @media only screen and (max-width: #{$mobile}) {@content;}
+    }
+    @mixin tablet {
+      @media only screen and ( min-width: #{$mobile + 1}) and (max-width: #{$tablet}) {@content;}
+    }
+    @mixin notebook {
+      @media only screen and ( min-width: #{$tablet + 1}) and (max-width: #{$notebook}) {@content;}
+    }
+    @mixin desktop {
+      @media only screen and ( min-width: #{$notebook + 1}) {@content;}
+    }
+  // Helper respond Down //
+    @mixin tabletDown {
+      @media only screen and (max-width: #{$tablet}) {@content;}
+    }
+    @mixin notebookDown {
+      @media only screen and (max-width: #{$notebook}) {@content;}
+    }
+  // Helper respond UP //
+    @mixin tabletUp {
+      @media only screen and ( min-width: #{$mobile + 1}) {@content;}
+    }
+    @mixin notebookUp {
+      @media only screen and ( min-width: #{$tablet + 1}) {@content;}
+    }
+.container {
+  margin: 0 auto;
+  padding: 0 ($gutter / 2);
+  width: 1200px;
+
+  @include notebookDown {
+    width: 980px;
+  }
+  @include tabletDown {
+    width: 720px;
+  }
+  @include mobile {
+    width: 100%;
+    padding: 0 $gutter;
+  }
+}
+.row {
+  margin: 0 ($gutter / -2);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  
+
+  &.middle {
+    align-items: center;
+  }
+
+  &.bottom {
+    align-items: flex-end;
+  }
+}
+.col {
+  display: block;
+  margin: 0;
+  padding: 0 ($gutter / 2);
+  width: 100%;
+  
+  flex: none;
+  $i: 1;
+  @while $i <= $columns {
+    $perc: unquote((100 / ($columns / $i)) + "%");
+    &.xs__#{$i} {width: $perc;}
+    $i: $i + 1;
+  }
+  $j: 1;
+  @while $j <= $columns {
+    $perc: unquote((100 / ($columns / $j)) + "%");
+    &.xs__#{$j}--offset {margin-left: $perc;}
+    $j: $j + 1;
+  }
+  @include tabletUp {
+    $i: 1;
+    @while $i <= $columns {
+      $perc: unquote((100 / ($columns / $i)) + "%");
+      &.sm__#{$i} {width: $perc;}
+      $i: $i + 1;
+    }
+    $j: 1;
+    @while $j <= $columns {
+      $perc: unquote((100 / ($columns / $j)) + "%");
+      &.sm__#{$j}--offset {margin-left: $perc;}
+      $j: $j + 1;
+    }
+  }
+  @include notebookUp {
+    $i: 1;
+    @while $i <= $columns {
+      $perc: unquote((100 / ($columns / $i)) + "%");
+      &.md__#{$i} {width: $perc;}
+      $i: $i + 1;
+    }
+    $j: 1;
+    @while $j <= $columns {
+      $perc: unquote((100 / ($columns / $j)) + "%");
+      &.md__#{$j}--offset {margin-left: $perc;}
+      $j: $j + 1;
+    }
+  }
+  @include desktop {
+    $i: 1;
+    @while $i <= $columns {
+      $perc: unquote((100 / ($columns / $i)) + "%");
+      &.lg__#{$i} {width: $perc;}
+      $i: $i + 1;
+    }
+    $j: 1;
+    @while $j <= $columns {
+      $perc: unquote((100 / ($columns / $j)) + "%");
+      &.lg__#{$j}--offset {margin-left: $perc;}
+      $j: $j + 1;
+    }
+  }
+}

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document Titile</title>
+    <link rel="icon" href="img/favicon.png" type="image/png"/>
+    <link rel="stylesheet" href="css/styles.min.css"/>
+  </head>
+  <body>
+    <div class="hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46">
+        <symbol id="user_icon" viewBox="0 0 46 46" fill="currentColor">
+          <path d="M23 3c5.8 0 10.5 4.6 10.5 10.3S28.8 23.6 23 23.6 12.5 19 12.5 13.3 17.2 3 23 3zm0 25.2C6.2 28.2 3 36.3 3 39c0 2.2 1.9 4 4.1 4h31.6a4 4 0 0 0 4.2-4v-.1c.1-2.6-3.1-10.7-19.9-10.7z"></path>
+        </symbol>
+        <symbol id="comment_icon" viewBox="0 0 46 46" fill="currentColor">
+          <path d="M23 40.5c3.8 0 7.5-.9 10.9-2.8 2.3 1.3 5 1.8 7.6 1.4.3 0 .5-.3.5-.6 0-.2-.1-.3-.3-.4a7.4 7.4 0 0 1-3.1-4.1c2.8-3 4.4-6.9 4.5-11 0-9.7-9-17.6-20-17.6S3 13.3 3 23s9 17.5 20 17.5zm7.2-19.7c1.2 0 2.2 1 2.2 2.2 0 1.2-1 2.2-2.2 2.2-1.2 0-2.2-1-2.2-2.2 0-1.2 1-2.2 2.2-2.2zm-7.2 0c1.2 0 2.2 1 2.2 2.2 0 1.2-1 2.2-2.2 2.2-1.2 0-2.2-1-2.2-2.2 0-1.2 1-2.2 2.2-2.2zm-7.2 0c1.2 0 2.2 1 2.2 2.2 0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2c.1-1.2 1-2.2 2.2-2.2z"></path>
+        </symbol>
+        <symbol id="likes_icon" viewBox="0 0 46 46" fill="currentColor">
+          <path d="M23 40.9C-16 19.6 12.2-6.8 23 11c10.8-17.8 39 8.6 0 29.9z"></path>
+        </symbol>
+        <symbol id="toggler_icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2c.6 0 1.1.5 1.1 1.1v17.7c0 .6-.5 1.1-1.1 1.1-.6 0-1.1-.5-1.1-1.1V3.1c0-.6.5-1.1 1.1-1.1zm6.8 3.4c.6 0 1.1.5 1.1 1.1v10.9c0 .6-.5 1.1-1.1 1.1-.6 0-1.1-.5-1.1-1.1V6.6c0-.7.5-1.2 1.1-1.2zm-13.6 0c.6 0 1.1.5 1.1 1.1v10.9c0 .6-.5 1.1-1.1 1.1-.6 0-1.1-.5-1.1-1.1V6.6c-.1-.7.4-1.2 1.1-1.2z"></path>
+        </symbol>
+        <symbol id="check_icon" viewBox="0 0 46 46" fill="currentColor">
+          <path d="M39.3 5L22.8 22.7l-4.6-6.5c-.8-.9-2.1-1.1-3-.3-.8.7-1 1.9-.5 2.8l6.2 8.6c.4.5 1 .8 1.6.9h.1c.6 0 1.2-.3 1.6-.7L42.4 7.9c.8-.9.8-2.2-.1-3a2 2 0 0 0-3 .1zm-.5 12.4a2.1 2.1 0 0 0-1.7 2.5l.3 3a15 15 0 1 1-7.8-13.2c1.1.5 2.4 0 2.9-1a2 2 0 0 0-.8-2.7 19.3 19.3 0 1 0 7.7 26.2 19.6 19.6 0 0 0 1.9-13.1 2.2 2.2 0 0 0-2.5-1.7z"></path>
+        </symbol>
+        <symbol id="money_icon" viewBox="0 0 46 46" fill="currentColor">
+          <path d="M4.9 23c0-6.1 3.1-11.8 8.2-15.2h.5l2.7 1.7c.1.1.2.3.1.4l-.1.1a14.7 14.7 0 0 0-6.2 19.7c2.4 4.7 7.2 7.7 12.5 7.8v-1.3c0-.3.2-.6.5-.6l.3.1 4.7 3.1c.3.2.3.5.2.8l-.2.2-4.7 3.1c-.3.2-.6.1-.8-.2l-.1-.3v-1.3A18 18 0 0 1 4.9 23zM23.5 4.9V3.6c0-.3-.2-.6-.5-.6l-.3.1L18 6.2c-.3.2-.3.5-.2.8l.2.2 4.7 3.1c.3.2.6.1.8-.2l.1-.3V8.4c8.1.2 14.4 7 14.1 15-.2 5.3-3.1 10-7.8 12.5-.1.1-.2.3-.1.4l.1.1 2.7 1.7h.5a18 18 0 0 0-9.6-33.2zM23 33.1c-5.6 0-10.1-4.5-10.1-10.1S17.4 12.9 23 12.9A10 10 0 0 1 33.1 23 10 10 0 0 1 23 33.1zm3.6-8.1c0-1.5-.8-2.4-2.7-3.1-1.4-.5-2-.9-2-1.4 0-.5.3-.9 1.4-.9l1.5.2h.3c.5 0 .9-.4.9-1a1 1 0 0 0-.7-.9l-1.5-.2v-.6c0-.5-.4-.8-.8-.8-.5 0-.8.4-.8.8v.8c-1.8.3-2.8 1.5-2.8 2.9 0 1.6 1.2 2.4 3 3 1.2.4 1.7.8 1.7 1.4 0 .6-.6 1-1.6 1l-1.8-.3-.3-.1a1 1 0 0 0-.9.7v.1c-.1.5.2 1 .6 1.1l2 .4v.8c-.1.4.2.9.7.9.4.1.9-.2.9-.7V28c1.9-.3 2.9-1.5 2.9-3z"></path>
+        </symbol>
+        <symbol id="delivery_icon" viewBox="0 0 46 46" fill="currentColor">
+          <path d="M43 23.4c0-.5-.4-.9-.9-.9h-.2l-3.7-7.2c-.2-.3-.5-.5-.8-.5H31l.2-1.9c.2-1.4-.9-2.7-2.3-2.9H8.7c-.5 0-.9.4-1 .9l-.2 1.6h11.3c.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.4 1.3H4c-.5 0-.9.4-1 .9 0 .5.4.9.9.9h14.6c.7.1 1.2.7 1.2 1.4 0 .8-.7 1.4-1.4 1.4H8.2c-.5 0-1 .4-1 .9s.4.9.9.9h10c.7.1 1.2.7 1.2 1.4 0 .8-.7 1.4-1.5 1.4H5.4c-.5 0-1 .4-1 .9s.4.9.9.9h.8l-.3 3.4c-.2 1.4.9 2.7 2.3 2.9h1c.3 2 2.1 3.4 4.1 3.4 2 0 3.8-1.4 4.3-3.4h8.9c.7 0 1.4-.3 1.9-.7.5.5 1.2.7 1.8.7h.1c.3 2 2.1 3.4 4.1 3.4 2 0 3.8-1.4 4.3-3.4h.6a3 3 0 0 0 3-2.8l.8-6.2c0 .1 0 .1 0 0zM13.4 34.2c-1.3 0-2.3-1-2.3-2.3v-.1c0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.3 1 2.3 2.3v.1c0 1.3-1.1 2.4-2.4 2.4zm21.2 0c-1.3 0-2.3-1-2.3-2.3v-.1c0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.3 1 2.3 2.3v.1c0 1.3-1.1 2.4-2.4 2.4zm5.9-4.4c-.1.6-.5 1-1.1 1h-.6a4 4 0 0 0-4-3.2c-2 0-3.7 1.3-4.2 3.2h-.2l-.6-.3c-.2-.2-.2-.4-.2-.6l1.2-13.2h2.7l-.5 4.8c-.2 1.4.9 2.7 2.3 2.9H41l-.5 5.4z"></path>
+        </symbol>
+        <symbol id="support_icon" viewBox="0 0 46 46" fill="currentColor">
+          <path d="M25.2 4.3c-5.8 0-11.3 2.8-14.6 7.6.7.5 1.4 1.1 1.9 1.8C15 10 18.9 7.6 23.3 7l1.8 3.1L27 7c6.9.9 12.4 6.3 13.3 13.3l-3.1 1.8 3.1 1.8c-.6 4.5-3.1 8.6-7 11 .2.5.4 1.1.4 1.7l-.1 1.2a17.8 17.8 0 0 0-8.4-33.5zm4.5 29.3c-4.1-3.3-5.3-1.7-7.1.2-1.3 1.3-4.6-1.4-7.4-4.3s-5.6-6.1-4.3-7.4c1.9-1.9 3.5-3 .2-7.1s-5.5-1-7.3.9c-2.1 2.1-.1 9.9 7.6 17.5s15.4 9.7 17.5 7.6c1.8-1.9 4.9-4.1.8-7.4zm-12.5-8.7c0-3.7 4.3-4.3 4.3-5.7 0-.5-.4-1-1-1h-.1c-.9 0-1.5 1.1-1.5 1.1L17.2 18c.7-1.3 2-2.2 3.5-2.1 1.6 0 3.4.9 3.4 3 0 3.1-4 3.7-4.1 5h4.2V26h-6.8l-.2-1.1zm8-2.8l3.8-6h3v5.5h1.2v2H32V26h-2.4v-2.4h-4.4v-1.5zm4.4-.5v-2.2l.1-1.1-.5 1-1.5 2.3h1.9z"></path>
+        </symbol>
+        <symbol id="close_icon" viewBox="0 0 46 46" fill="currentColor">
+          <path d="M42.4 39.4c0-.1 0-.1 0 0L26 23 42.3 6.6c.8-.9.8-2.2-.1-3-.8-.8-2.1-.8-3 0L23 19.9 6.7 3.6c-.9-.8-2.2-.8-3 .1-.8.8-.8 2.1 0 3L19.9 23 3.7 39.3c-.8.8-.9 2.1-.1 3l.1.1c.8.8 2.1.9 3 .1l.1-.1L23 26l16.3 16.3c.8.8 2.1.9 3 .1l.1-.1a2 2 0 0 0 0-2.9z"></path>
+        </symbol>
+        <symbol id="checkbox_icon" viewBox="0 0 46 46" fill="currentColor">
+          <path d="M42.1 9.5a2.8 2.8 0 0 0-4 0L17.4 30.3l-9.5-9.5a2.9 2.9 0 0 0-4.1.1 2.8 2.8 0 0 0 0 4l11.5 11.5a3 3 0 0 0 4.1 0l22.8-22.8c1.1-1.2 1.1-3-.1-4.1z"></path>
+        </symbol>
+      </svg>
+    </div>
+    <div class="screen intro">
+      <div class="container">
+        <div class="row">
+          <div class="col lg__6 lg__3--offset md__8 md__2--offset">
+            <div class="intro__header">
+              <h1>GROW YOUR<br/>INSTAGRAM FOLLOWERS</h1>
+              <p>Become Instagram SuperStar In 1-2-3. Start right now.</p>
+              <div class="intro__header--action"><img class="action__image" src="img/intro_icons.png" alt=""/>
+                <button class="btn white" data-mfp-src="#login">GROW YOUR PROFILE</button>
+                <div class="action__info">
+                  <div class="info"><img src="img/intro_stars.png" alt=""/><span>4.7 out of 5 stars in the Customers Reviews</span></div>
+                  <div class="info"><img src="img/intro_peoples.png" alt=""/><span>More than 1.3m followers delivered in October 2018</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col md__8 intro--last">
+            <div class="intro__text">
+              <h2>Why should I<br/>buy <span>Followers?</span></h2>
+              <p>Both the number of users and the time spent in various social networks is Growing day by day. Just imagine you need on interior designer. You’ve found two designers. The first one has 95 followers, the second one - 1095. The question of Either of two will discuss your project with is evident.</p>
+              <p>There’s a psychological phenomenon called “Social Proff” which does affect Our perception about a person/brand. Why getting subscribed to an account While others are skeptical about that?</p>
+            </div>
+          </div>
+          <div class="col md__4 intro--first">
+            <div class="intro__image"><img src="img/intro_phone.png" alt=""/>
+              <div class="counter">
+                <svg>
+                  <use xlink:href="#user_icon"></use>
+                </svg><span>+</span><span data-inview="data-inview" data-count="5000">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen packages">
+      <div class="container">
+        <h2>Choose your package</h2>
+        <div class="packages__wraper">
+          <div class="owl-carousel" id="priceTable">
+            <div class="package blue">
+              <svg class="package__icon">
+                <use xlink:href="#user_icon"></use>
+              </svg>
+              <div class="package__title">BUY FOLLOWERS</div>
+              <div class="package__text">How many followers do you need?</div>
+              <div class="package__value">+2000</div>
+              <div class="package__progress prc25">
+                <svg class="toggler">
+                  <use xlink:href="#toggler_icon"></use>
+                </svg>
+                <div class="value"><span>+2000</span></div>
+                <div class="min">0</div>
+                <div class="max">50,000</div>
+              </div>
+              <div class="package__sale"><span>30% OFF</span></div>
+              <div class="package__price--old"><span>$152.99</span></div>
+              <div class="package__price">$19.97</div>
+              <button class="btn package__button" data-mfp-src="#login"><span>Grow Profile</span></button>
+            </div>
+            <div class="package red">
+              <svg class="package__icon">
+                <use xlink:href="#likes_icon"></use>
+              </svg>
+              <div class="package__title">BUY FOLLOWERS</div>
+              <div class="package__text">How many followers do you need?</div>
+              <div class="package__value">+2000</div>
+              <div class="package__progress prc25">
+                <svg class="toggler">
+                  <use xlink:href="#toggler_icon"></use>
+                </svg>
+                <div class="value"><span>+2000</span></div>
+                <div class="min">0</div>
+                <div class="max">50,000</div>
+              </div>
+              <div class="package__sale"><span>30% OFF</span></div>
+              <div class="package__price--old"><span>$152.99</span></div>
+              <div class="package__price">$19.97</div>
+              <button class="btn package__button" data-mfp-src="#login"><span>Grow Profile</span></button>
+            </div>
+            <div class="package green">
+              <svg class="package__icon">
+                <use xlink:href="#comment_icon"></use>
+              </svg>
+              <div class="package__title">BUY FOLLOWERS</div>
+              <div class="package__text">How many followers do you need?</div>
+              <div class="package__value">+2000</div>
+              <div class="package__progress prc25">
+                <svg class="toggler">
+                  <use xlink:href="#toggler_icon"></use>
+                </svg>
+                <div class="value"><span>+2000</span></div>
+                <div class="min">0</div>
+                <div class="max">50,000</div>
+              </div>
+              <div class="package__sale"><span>30% OFF</span></div>
+              <div class="package__price--old"><span>$152.99</span></div>
+              <div class="package__price">$19.97</div>
+              <button class="btn package__button" data-mfp-src="#login"><span>Grow Profile</span></button>
+            </div>
+            <div class="package blue">
+              <svg class="package__icon">
+                <use xlink:href="#user_icon"></use>
+              </svg>
+              <div class="package__title">BUY FOLLOWERS</div>
+              <div class="package__text">How many followers do you need?</div>
+              <div class="package__value">+2000</div>
+              <div class="package__progress prc25">
+                <svg class="toggler">
+                  <use xlink:href="#toggler_icon"></use>
+                </svg>
+                <div class="value"><span>+2000</span></div>
+                <div class="min">0</div>
+                <div class="max">50,000</div>
+              </div>
+              <div class="package__sale"><span>30% OFF</span></div>
+              <div class="package__price--old"><span>$152.99</span></div>
+              <div class="package__price">$19.97</div>
+              <button class="btn package__button" data-mfp-src="#login"><span>Grow Profile</span></button>
+            </div>
+            <div class="package red">
+              <svg class="package__icon">
+                <use xlink:href="#likes_icon"></use>
+              </svg>
+              <div class="package__title">BUY FOLLOWERS</div>
+              <div class="package__text">How many followers do you need?</div>
+              <div class="package__value">+2000</div>
+              <div class="package__progress prc25">
+                <svg class="toggler">
+                  <use xlink:href="#toggler_icon"></use>
+                </svg>
+                <div class="value"><span>+2000</span></div>
+                <div class="min">0</div>
+                <div class="max">50,000</div>
+              </div>
+              <div class="package__sale"><span>30% OFF</span></div>
+              <div class="package__price--old"><span>$152.99</span></div>
+              <div class="package__price">$19.97</div>
+              <button class="btn package__button" data-mfp-src="#login"><span>Grow Profile</span></button>
+            </div>
+            <div class="package green">
+              <svg class="package__icon">
+                <use xlink:href="#comment_icon"></use>
+              </svg>
+              <div class="package__title">BUY FOLLOWERS</div>
+              <div class="package__text">How many followers do you need?</div>
+              <div class="package__value">+2000</div>
+              <div class="package__progress prc25">
+                <svg class="toggler">
+                  <use xlink:href="#toggler_icon"></use>
+                </svg>
+                <div class="value"><span>+2000</span></div>
+                <div class="min">0</div>
+                <div class="max">50,000</div>
+              </div>
+              <div class="package__sale"><span>30% OFF</span></div>
+              <div class="package__price--old"><span>$152.99</span></div>
+              <div class="package__price">$19.97</div>
+              <button class="btn package__button" data-mfp-src="#login"><span>Grow Profile</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="packages__footer">
+          <div class="row">
+            <div class="col lg__8 md__8">
+              <div class="packages__footer--wraper">
+                <h3>Do you need more than<br/>50.000 <span class="text__blue">Followers</span>/<span class="text__red">Likes?</span></h3>
+                <button class="btn white" data-mfp-src="#login">YES, I NEED MORE</button>
+              </div>
+            </div>
+            <div class="col lg__3 md__4"><img src="img/packages_icon.png" alt=""/></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen steps">
+      <div class="container">
+        <h2>Become an Instagram<br/>Superstar in 3 steps</h2>
+        <div class="steps__item">
+          <div class="row">
+            <div class="col md__5 steps__item--image"><img src="img/step_1.png" alt="" data-inview="data-inview"/></div>
+            <div class="col md__5 steps__item--text">
+              <div class="step-counter text__blue"><span>Step 1</span></div>
+              <h4>Increase number of followers</h4>
+              <ul>
+                <li>
+                  <div class="icon text__blue">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>This is the fastest growing subscriber base. Total through You can have tens of thousands of followers in a few hours.</span>
+                </li>
+                <li>
+                  <div class="icon text__blue">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>The most valuable thing in a lot of subscribers is that the promoted profile causes social trust. New subscribers take you seriously.</span>
+                </li>
+                <li>
+                  <div class="icon text__blue">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>The phenomenon of “Social Proof” brings organic followers. When you have thousands of followers, users Subscribe more actively.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="steps__item">
+          <div class="row">
+            <div class="col md__5 md__1--offset steps__item--text">
+              <div class="step-counter text__red"><span>Step 2</span></div>
+              <h4>Increase your engagement rate</h4>
+              <ul>
+                <li>
+                  <div class="icon text__red">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>Content that collects many likes we perceive as more meaningful!</span>
+                </li>
+                <li>
+                  <div class="icon text__red">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>The more likes, the higher the probability that we too Like this post!</span>
+                </li>
+                <li>
+                  <div class="icon text__red">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>Advertisers in the analysis of accounts estimate the ratio number of likes and number of subscribers. The higher this sindicator, the more attractive this channel.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="col md__5 steps__item--image"><img src="img/step_2.png" alt="" data-inview="data-inview"/></div>
+          </div>
+        </div>
+        <div class="steps__item">
+          <div class="row">
+            <div class="col md__6">
+              <div class="chart" data-inview="data-inview" data-chart="1">
+                <div class="chart__wraper">
+                  <div class="chart__title">Your Instagram Followers</div>
+                  <div class="chart__before">Before</div>
+                  <div class="chart__after">After</div>
+                  <div class="chart__url">GETLIKES.TODAY</div>
+                  <div id="chart1"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col md__5 steps__item--text">
+              <div class="step-counter text__purple"><span>Step 3</span></div>
+              <h4>Automatized</h4>
+              <ul>
+                <li>
+                  <div class="icon text__purple">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>On the preparation of posts for the account goes and so very a lot of time. We appreciate your time, so we automated our service.</span>
+                </li>
+                <li>
+                  <div class="icon text__purple">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>You just need to select the desired number of likes, that will be delivered automatically as soon as you post a post.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen info">
+      <div class="container">
+        <div class="row">
+          <div class="col md__4">
+            <div class="info__item">
+              <svg class="info__icon">
+                <use xlink:href="#money_icon"></use>
+              </svg>
+              <h4 class="info__title">Money Back warranty</h4>
+              <p class="info__text">We want you to have a great shopping experience. The GetLikes Money Back Guarantee protects you in case you do not receive your order.</p>
+            </div>
+          </div>
+          <div class="col md__4">
+            <div class="info__item">
+              <svg class="info__icon">
+                <use xlink:href="#delivery_icon"></use>
+              </svg>
+              <h4 class="info__title">Instant Delivery</h4>
+              <p class="info__text">Followers will start rolling in right away as long as your payment was approved! Follower orders could take up to 10 - 45 minutes depending on quantity.</p>
+            </div>
+          </div>
+          <div class="col md__4">
+            <div class="info__item">
+              <svg class="info__icon">
+                <use xlink:href="#support_icon"></use>
+              </svg>
+              <h4 class="info__title">Customer Support 24/7</h4>
+              <p class="info__text">Customer support is available to help you with any questions or concerns you may have with your order.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen compare">
+      <div class="container">
+        <div class="row">
+          <div class="col md__8 md__2--offset lg__6 lg__3--offset text__center">
+            <h2>High-Quality Service</h2>
+            <p>When you buy Instagram subscribers, you want subscribers High Quality. See how we differ from competitors.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col md__4">
+            <div class="compare__text after">
+              <h4 class="text__purple">Our Instagram Followers</h4>
+              <ul>
+                <li>
+                  <div class="icon text__green">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>Unique Profile Photo</span>
+                </li>
+                <li>
+                  <div class="icon text__green">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>Unique Bio</span>
+                </li>
+                <li>
+                  <div class="icon text__green">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>Frequently Posts</span>
+                </li>
+                <li>
+                  <div class="icon text__green">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>Has Followers of Their Own</span>
+                </li>
+                <li>
+                  <div class="icon text__green">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span>Doesn’t Follow too Many Users</span>
+                </li>
+              </ul>
+              <h4 class="text__purple">No Risk of Getting Suspended</h4>
+            </div>
+          </div>
+          <div class="col md__4">
+            <div class="compare__image">
+              <div class="twentytwenty-container"><img src="img/compare_1.png"/><img src="img/compare_2.png"/></div>
+            </div>
+          </div>
+          <div class="col md__4">
+            <div class="compare__text">
+              <h4 class="text__muted">Followers other providers</h4>
+              <ul>
+                <li>
+                  <div class="icon text__red">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span class="text__muted">No Profile Photo (Default)</span>
+                </li>
+                <li>
+                  <div class="icon text__red">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span class="text__muted">No or Poorly Written Bio</span>
+                </li>
+                <li>
+                  <div class="icon text__red">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span class="text__muted">Anti-Social</span>
+                </li>
+                <li>
+                  <div class="icon text__red">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span class="text__muted">No Followers of Their Own</span>
+                </li>
+                <li>
+                  <div class="icon text__red">
+                    <svg>
+                      <use xlink:href="#check_icon"></use>
+                    </svg>
+                  </div><span class="text__muted">Follows too Many Users</span>
+                </li>
+              </ul>
+              <h4 class="text__muted">High Risk of Getting Suspended</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen offer">
+      <div class="container text__center">
+        <div class="row">
+          <div class="col md__8 md__2--offset lg__6 lg__3--offset">
+            <h2>One-time Offer</h2>
+            <div class="countdown" data-countdown="data-countdown">
+              <!--.countdown__message-->
+              <div class="countdown__bg">LIMITED<br/>TIME</div>
+              <div class="countdown__timer">
+                <div class="countdown__timer--item"><strong class="minutes"></strong><span>Minutes</span></div>
+                <div class="countdown__timer--dots">:</div>
+                <div class="countdown__timer--item"><strong class="seconds"></strong><span>Seconds</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="offer__image"><img src="img/offer.png" alt=""/></div>
+        <div class="offer__price">
+          <div class="offer__price--title">Final Price</div>
+          <div class="offer__price--old">$32.68</div>
+          <div class="offer__price--new text__green">$19.97</div>
+          <div class="offer__price--info">Buying together saves <span class="text__green">$12.71</span></div>
+          <button class="btn gradient" data-mfp-src="#login">BUY NOW</button>
+          <p>Extra Offer only upon first website visit</p>
+        </div>
+      </div>
+    </div>
+    <div class="screen clients">
+      <div class="container">
+        <div class="clients__header text__center">
+          <h2>Our Client’s Success Stories</h2>
+          <p>We have more than 17200 happy users.</p><img src="img/clients.png" alt=""/>
+        </div>
+        <div class="steps__item">
+          <div class="row">
+            <div class="col md__6">
+              <div class="chart" data-inview="data-inview" data-chart="2">
+                <div class="chart__wraper">
+                  <div class="chart__title">Your Instagram Followers</div>
+                  <div class="chart__before">Before</div>
+                  <div class="chart__after">After</div>
+                  <div class="chart__url">GETLIKES.TODAY</div>
+                  <div id="chart2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col md__5 lg__4 lg__1--offset">
+              <div class="clients__text">
+                <div class="author"><img class="author__image" src="img/client.png" alt=""/>
+                  <div class="author__info">
+                    <div class="name">@adelinaulan</div>
+                    <div class="status">Uses Instagram for 3 months</div>
+                  </div>
+                </div>
+                <p>“I had a slight issue with entering my username but a member from support helped me out right away and I was able to order followers. I got my order, thank you!”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen footer">
+      <div class="container">
+        <div class="row">
+          <div class="col md__8 md__2--offset lg__6 lg__3--offset">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Discounts and special conditions, promotions and bonuses, life hacking promotion and useful services - only for our subscribers.</p>
+            <div class="form__input">
+              <input type="email" placeholder="Enter your Email…"/>
+            </div>
+            <div class="form__ctrl">
+              <button class="btn white">SUBSCRIBE NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen copyright">
+      <div class="container">© Copyright 2018 by GetLikes</div>
+    </div>
+  </body>
+  <div class="mfp-hide popup" id="login">
+    <!--(data-scrollbar="horizontal")-->
+    <div class="popup__close" data-close="modal">
+      <svg>
+        <use xlink:href="#close_icon"></use>
+      </svg>
+    </div>
+    <div class="popup__header">
+      <svg class="text__red">
+        <use xlink:href="#likes_icon"></use>
+      </svg>
+      <h3>200 Instagram Likes</h3>
+      <p>Just type your Instagram name and Email</p>
+    </div>
+    <div class="popup__form">
+      <input type="text" placeholder="Instagram Username…"/>
+      <input type="email" placeholder="Your Email…"/>
+      <div class="popup__form--agree">
+        <input id="agree" type="checkbox"/>
+        <label for="agree">
+          <svg>
+            <use xlink:href="#checkbox_icon"></use>
+          </svg>
+        </label><span>I agree with</span><a href="">Terms Of Service</a>
+      </div>
+      <button class="btn gradient" data-mfp-src="#buy">Next to select posts</button>
+    </div>
+  </div>
+  <div class="mfp-hide popup" id="buy">
+    <div class="popup__close" data-close="modal">
+      <svg>
+        <use xlink:href="#close_icon"></use>
+      </svg>
+    </div>
+    <div class="popup__header">
+      <svg class="text__red">
+        <use xlink:href="#likes_icon"></use>
+      </svg>
+      <h3>200 Instagram Likes for <span class="text__green">$0.69</span></h3>
+      <p><span class="text__red">3 posts selected / 200 likes per post</span></p>
+    </div>
+    <div class="popup__thumbs">
+      <div class="popup__thumbs--wraper" data-scrollbar="data-scrollbar">
+        <ul class="thumb__list">
+          <li>
+            <input type="checkbox" id="thumb_0"/>
+            <label for="thumb_0"><img src="https://picsum.photos/120/120/?image=0" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>0</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_1"/>
+            <label for="thumb_1"><img src="https://picsum.photos/120/120/?image=1" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>138</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_2"/>
+            <label for="thumb_2"><img src="https://picsum.photos/120/120/?image=2" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>276</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_3"/>
+            <label for="thumb_3"><img src="https://picsum.photos/120/120/?image=3" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>414</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_4"/>
+            <label for="thumb_4"><img src="https://picsum.photos/120/120/?image=4" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>552</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_5"/>
+            <label for="thumb_5"><img src="https://picsum.photos/120/120/?image=5" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>690</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_6"/>
+            <label for="thumb_6"><img src="https://picsum.photos/120/120/?image=6" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>828</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_7"/>
+            <label for="thumb_7"><img src="https://picsum.photos/120/120/?image=7" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>966</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_8"/>
+            <label for="thumb_8"><img src="https://picsum.photos/120/120/?image=8" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>1104</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_9"/>
+            <label for="thumb_9"><img src="https://picsum.photos/120/120/?image=9" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>1242</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_10"/>
+            <label for="thumb_10"><img src="https://picsum.photos/120/120/?image=10" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>1380</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_11"/>
+            <label for="thumb_11"><img src="https://picsum.photos/120/120/?image=11" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>1518</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_12"/>
+            <label for="thumb_12"><img src="https://picsum.photos/120/120/?image=12" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>1656</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_13"/>
+            <label for="thumb_13"><img src="https://picsum.photos/120/120/?image=13" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>1794</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_14"/>
+            <label for="thumb_14"><img src="https://picsum.photos/120/120/?image=14" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>1932</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="thumb_15"/>
+            <label for="thumb_15"><img src="https://picsum.photos/120/120/?image=15" alt=""/>
+              <div class="likes">
+                <svg>
+                  <use xlink:href="#likes_icon"></use>
+                </svg><span>2070</span>
+              </div>
+              <div class="indicator">
+                <svg class="l1">
+                  <use xlink:href="#likes_icon"></use>
+                </svg>
+                <svg class="l2">
+                  <use xlink:href="#checkbox_icon"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="popup__plan">
+      <input id="planchange" type="checkbox"/>
+      <label for="planchange"><span>Standart</span><span>Premium</span></label>
+    </div>
+    <div class="popup__buy">
+      <div class="row">
+        <div class="col sm__6">
+          <button class="btn outline">Add to Card</button>
+        </div>
+        <div class="col sm__6">
+          <button class="btn gradient">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script src="js/app.min.js"></script>
+  </div>
+</html>
