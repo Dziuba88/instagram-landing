@@ -166,6 +166,7 @@ $(document).ready(function() {
   });
 
   $('#priceTable').owlCarousel({
+    thumbs: false,
     center: true,
     dots: false,
     items: 3,
@@ -181,6 +182,17 @@ $(document).ready(function() {
         items: 3
       }
     }
+  });
+
+  $('#clients').owlCarousel({
+    thumbs: true,
+    thumbsPrerendered: true,
+    thumbItemClass: 'owl-thumb',
+    dots: false,
+    items: 1,
+    //loop: true,
+    //smartSpeed: 0,
+    responsiveRefreshRate: 0,
   });
 
   $('input[type=email]').on('focus', function () {

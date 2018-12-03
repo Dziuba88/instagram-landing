@@ -133,6 +133,75 @@ body {
 
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 99;
+  box-shadow:  0 0px 20px rgba(black, .16);
+  background-color: #ffffff;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100vh;
+    background: #000 url(../img/intro_bg.png)  no-repeat top right;
+    background-size: cover;
+    top: 0;
+    left: -50px;
+    right: -50px;
+    z-index: 1;
+    filter: blur(50px);
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__wraper {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  .btn.white {
+    width: unset;
+    box-shadow: none;
+    font-size: 19px;
+    line-height: 20px;
+    padding: 15px 30px;
+    margin: 0;
+  }
+
+  @include mobile {
+    &:after {
+      height: 200vh;
+    }
+    &__logo {
+      height: 30px;
+    }
+
+    &__wraper {
+      padding: 0;
+      height: 50px;
+      margin: 0 -10px;
+    }
+
+    .btn.white {
+      font-size: 11px;
+      line-height: 15px;
+      padding: 10px;
+      border-radius: 5px
+    }
+  }
+}
+
 .intro {
   background: #fff url(../img/intro_bg.png)  no-repeat top right;
   background-size: cover;
@@ -1334,6 +1403,53 @@ body {
       &__info {
         padding-left: 15px;
       }
+    }
+  }
+
+  .owl-thumbs {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-right: 30px;
+
+    .owl-thumb {
+      box-shadow: 0 10px 30px rgba(black, .16);
+      border: 2px solid white;
+      border-radius: 100%;
+      overflow: hidden;
+      width: 74px;
+      height: 74px;
+      position: relative;
+      margin-right: -30px;
+      margin-left: 0;
+      cursor: pointer;
+      background-color: black;
+
+      &:hover img, &.active img{
+        //z-index: 2;
+        opacity: .4;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        transition: .15s ease-in-out;
+      }
+    }
+  }
+
+  @include tabletDown {
+    .steps__item .col:first-child {
+      order:2;
+
+      .chart {margin:0;}
+    }
+
+    &__text {
+      padding: 0 15px 30px;
     }
   }
 

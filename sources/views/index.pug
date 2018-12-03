@@ -21,6 +21,11 @@ html(lang="en")
       )
       symbol(id='checkbox_icon', viewBox="0 0 46 46", fill="currentColor"): path(d="M42.1 9.5a2.8 2.8 0 0 0-4 0L17.4 30.3l-9.5-9.5a2.9 2.9 0 0 0-4.1.1 2.8 2.8 0 0 0 0 4l11.5 11.5a3 3 0 0 0 4.1 0l22.8-22.8c1.1-1.2 1.1-3-.1-4.1z")
 
+    .header: .container
+      .header__wraper
+        img.header__logo(src="img/logo.png", alt="")
+        button.btn.white(data-mfp-src="#login") GROW YOUR PROFILE
+
     .screen.intro: .container
       .row
         .col.lg__6.lg__3--offset.md__8.md__2--offset: .intro__header
@@ -286,7 +291,12 @@ html(lang="en")
       .clients__header.text__center
         h2 Our Client’s Success Stories
         p We have more than 17200 happy users.
-        img(src="img/clients.png", alt="")
+        .owl-thumbs(data-slider-id="clients")
+          button.owl-thumb: img(src="img/client1.png", alt="")
+          button.owl-thumb: img(src="img/client2.png", alt="")
+          button.owl-thumb: img(src="img/client3.png", alt="")
+          button.owl-thumb: img(src="img/client4.png", alt="")
+          button.owl-thumb: img(src="img/client5.png", alt="")
       .steps__item: .row
         .col.md__6: .chart(data-inview data-chart="2"): .chart__wraper
           .chart__title Your Instagram Followers
@@ -294,21 +304,51 @@ html(lang="en")
           .chart__after After
           .chart__url GETLIKES.TODAY
           #chart2
-        .col.md__5.lg__4.lg__1--offset: .clients__text
-          .author
-            img(src="img/client.png", alt="").author__image
-            .author__info
-              .name @adelinaulan
-              .status Uses Instagram for 3 months
-          p “I had a slight issue with entering my username but a member from support helped me out right away and I was able to order followers. I got my order, thank you!”
+        .col.md__5.lg__4.lg__1--offset: #clients.owl-carousel(data-slider-id="clients")
+          .clients__text
+            .author
+              img(src="img/client1.png", alt="").author__image
+              .author__info
+                .name @adelinaulan
+                .status Uses Instagram for 3 months
+            p “I had a slight issue with entering my username but a member from support helped me out right away and I was able to order followers. I got my order, thank you!”
+          .clients__text
+            .author
+              img(src="img/client2.png", alt="").author__image
+              .author__info
+                .name @adelinaulan
+                .status Uses Instagram for 3 months
+            p “I had a slight issue with entering my username but a member from support helped me out right away and I was able to order followers. I got my order, thank you!”
+          .clients__text
+            .author
+              img(src="img/client3.png", alt="").author__image
+              .author__info
+                .name @adelinaulan
+                .status Uses Instagram for 3 months
+            p “I had a slight issue with entering my username but a member from support helped me out right away and I was able to order followers. I got my order, thank you!”
+          .clients__text
+            .author
+              img(src="img/client4.png", alt="").author__image
+              .author__info
+                .name @adelinaulan
+                .status Uses Instagram for 3 months
+            p “I had a slight issue with entering my username but a member from support helped me out right away and I was able to order followers. I got my order, thank you!”
+          .clients__text
+            .author
+              img(src="img/client5.png", alt="").author__image
+              .author__info
+                .name @adelinaulan
+                .status Uses Instagram for 3 months
+            p “I had a slight issue with entering my username but a member from support helped me out right away and I was able to order followers. I got my order, thank you!”
 
-    .screen.footer: .container
+    .footer: .container
       .row: .col.md__8.md__2--offset.lg__6.lg__3--offset
         h2 Subscribe to Our Newsletter
         p Discounts and special conditions, promotions and bonuses, life hacking promotion and useful services - only for our subscribers.
         .form__input: input(type="email", placeholder="Enter your Email…")
         .form__ctrl: button.btn.white SUBSCRIBE NOW
-    .screen.copyright: .container © Copyright 2018 by GetLikes
+
+    .copyright: .container © Copyright 2018 by GetLikes
 
   .mfp-hide.popup#login
     //(data-scrollbar="horizontal")
