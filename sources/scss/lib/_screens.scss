@@ -48,6 +48,8 @@ body {
   font-style: normal;
   cursor: pointer;
   max-width: 100%;
+  position: relative;
+  z-index: 99;
 
   &.white {
     font-size: 25px;
