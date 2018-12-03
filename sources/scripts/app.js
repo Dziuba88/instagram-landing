@@ -27,6 +27,14 @@
     },
     series: [{
       data: [{ value: 200, symbol: 'none', label: { show: false } }, 260, 235, 246, { value: 265, symbol: 'none', label: { show: false} }, 260, 479, 620, 790],
+      animation: true,
+      animationThreshold: 2000,
+      animationDuration: 2000000000000,
+      animationEasing: 'cubicInOut',
+      animationDelay: 300000,
+      animationDurationUpdate: 2000,
+      animationEasingUpdate: 'cubicInOut',
+      animationDelayUpdate: 350,
       type: 'line',
       clickable: false,
       lineStyle: {
@@ -68,12 +76,7 @@
         fontWeight: 700,
         fontFamily: '"Avenir"'
       },
-    }],
-    animationDelay: 1000,
-    animationDuration: 3000,
-    animationThreshold: 150,
-    animationDelayUpdate: 0,
-    animationDurationUpdate: 1000
+    }]
   }
   var chart1 = echarts.init(document.getElementById("chart1"));
   var chart2 = echarts.init(document.getElementById("chart2"));
