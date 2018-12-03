@@ -160,7 +160,7 @@ $(document).ready(function() {
   console.log('Document Ready!');
 
   var tooltipSlider = document.getElementById('slider-tooltip');
-
+  var tooltipSliderValue = document.getElementById('slider-value');
   noUiSlider.create(tooltipSlider, {
     start: [2000],
     tooltips: [wNumb({ decimals: 0 })],
@@ -173,6 +173,9 @@ $(document).ready(function() {
       'min': 0,
       'max': 10000
     }
+  });
+  tooltipSlider.noUiSlider.on('update', function (values, handle) {
+    tooltipSliderValue.innerHTML = values[handle];
   });
 
   $(".twentytwenty-container").twentytwenty({
