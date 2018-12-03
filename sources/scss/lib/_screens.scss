@@ -391,8 +391,8 @@ body {
 
       &--action .action__image {display: none;}
     }
-    &--first {order: unset}
-    &--last {order: 1}
+    &--first {order: 1}
+    &--last {order: 2}
     &__image {
       img {
         position: relative;
@@ -402,7 +402,8 @@ body {
       }
       .counter {
         top: 20px;
-        left: 270px;
+        left: 50%;
+        margin-left: -80px;
       }
     }
   }
@@ -421,7 +422,8 @@ body {
         width: 120px;
         padding: 10px;
         font-size: 20px;
-        left: 107px;
+        left: 50%;
+        margin-left: -35px;
         border-radius: 5px;
 
         svg {
@@ -458,7 +460,7 @@ body {
   border-bottom: 2px solid #E0E0E0;
 
   &__wraper {
-    padding: 0 100px;
+    padding: 0;
   }
 
   h2 {
@@ -488,6 +490,9 @@ body {
     backface-visibility: hidden;
     line-height: 1;
     user-select: none;
+    width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
 
     * {user-select: none;}
 
@@ -522,7 +527,7 @@ body {
       font-weight: 700;
       font-size: 40px;
       line-height: 1;
-      padding-bottom: 50px;
+      padding-bottom: 60px;
     }
 
     &__progress {
@@ -699,15 +704,40 @@ body {
       }
     }
 
+    &__slider {
+
+      .noUi-pips-horizontal {
+        padding-top: 5px;
+        color: #5273ff;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 500;
+
+        .noUi-value[data-value='0'] {
+          text-align: left;
+          left: 0;
+          transform: none;
+        }
+
+        .noUi-value[data-value='10000'] {
+          text-align: right;
+          right: 0;
+          left: auto !important;
+          transform: none;
+        }
+      }
+      .noUi-marker-horizontal {display: none;}
+    }
+
   }
-  .active .package {transform: scale(1);}
-  .center .package {
+  //.active .package {transform: scale(1);}
+  /*.center .package {
     //margin: -30px;
     padding-top: 40px;
     margin-top: -20px;
     transform: scale(1.18);
     box-shadow: 0 5px 25px rgba(black, .16);
-  }
+  }*/
 
   &__footer {
     padding-top: 60px;

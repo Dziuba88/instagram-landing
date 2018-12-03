@@ -41,11 +41,11 @@ html(lang="en")
               .info
                 img(src="img/intro_peoples.png", alt="")
                 span More than 1.3m followers delivered in October 2018
-        .col.md__8.intro--last: .intro__text
+        .col.lg__8.intro--last: .intro__text
           h2 Why should I<br/>buy <span>Followers?</span>
           p Both the number of users and the time spent in various social networks is Growing day by day. Just imagine you need on interior designer. You’ve found two designers. The first one has 95 followers, the second one - 1095. The question of Either of two will discuss your project with is evident.
           p There’s a psychological phenomenon called “Social Proff” which does affect Our perception about a person/brand. Why getting subscribed to an account While others are skeptical about that?
-        .col.md__4.intro--first: .intro__image
+        .col.lg__4.intro--first: .intro__image
           img(src="img/intro_phone.png", alt="")
           .counter
             svg(): use(xlink:href="#user_icon")
@@ -54,13 +54,15 @@ html(lang="en")
 
     .screen.packages: .container
       h2 Choose your package
-      .packages__wraper: #priceTable.owl-carousel
+      .packages__wraper
+        // #priceTable.owl-carousel
         .package.blue
           svg.package__icon: use(xlink:href="#user_icon")
           .package__title BUY FOLLOWERS
           .package__text How many followers do you need?
           .package__value +2000
-          .package__progress.prc25
+          .package__slider#slider-tooltip
+          //.package__progress.prc25
             svg.toggler: use(xlink:href="#toggler_icon")
             .value: span +2000
             .min 0
@@ -69,7 +71,7 @@ html(lang="en")
           .package__price--old: span $152.99
           .package__price $19.97
           button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        .package.red
+        //.package.red
           svg.package__icon: use(xlink:href="#likes_icon")
           .package__title BUY FOLLOWERS
           .package__text How many followers do you need?
@@ -83,7 +85,7 @@ html(lang="en")
           .package__price--old: span $152.99
           .package__price $19.97
           button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        .package.green
+        //.package.green
           svg.package__icon: use(xlink:href="#comment_icon")
           .package__title BUY FOLLOWERS
           .package__text How many followers do you need?
@@ -97,7 +99,7 @@ html(lang="en")
           .package__price--old: span $152.99
           .package__price $19.97
           button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        .package.blue
+        //.package.blue
           svg.package__icon: use(xlink:href="#user_icon")
           .package__title BUY FOLLOWERS
           .package__text How many followers do you need?
@@ -111,7 +113,7 @@ html(lang="en")
           .package__price--old: span $152.99
           .package__price $19.97
           button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        .package.red
+        //.package.red
           svg.package__icon: use(xlink:href="#likes_icon")
           .package__title BUY FOLLOWERS
           .package__text How many followers do you need?
@@ -125,7 +127,7 @@ html(lang="en")
           .package__price--old: span $152.99
           .package__price $19.97
           button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        .package.green
+        //.package.green
           svg.package__icon: use(xlink:href="#comment_icon")
           .package__title BUY FOLLOWERS
           .package__text How many followers do you need?

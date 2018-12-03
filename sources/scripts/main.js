@@ -7,7 +7,5 @@
 //@prepros-append plugins/jquery.modal.js
 //@prepros-append plugins/jquery.scrollbar.js
 //@prepros-append plugins/tab.js
-
-
-
-
+//@prepros-append plugins/nouislider.js
+//@prepros-append plugins/wNumb.js

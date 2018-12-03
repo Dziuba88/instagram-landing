@@ -69,26 +69,26 @@
         fontFamily: '"Avenir"'
       },
     }],
-    animationDelay: 100,
+    animationDelay: 1000,
     animationDuration: 3000,
-    animationThreshold: 1500,
-    animationDelayUpdate: 100,
-    animationDurationUpdate: 3000
+    animationThreshold: 150,
+    animationDelayUpdate: 0,
+    animationDurationUpdate: 1000
   }
   var chart1 = echarts.init(document.getElementById("chart1"));
   var chart2 = echarts.init(document.getElementById("chart2"));
-  setTimeout(function () {
+  $(window).on('resize', function () {
+    if (chart1 != null && chart1 != undefined) {
+      setTimeout(function () { chart1.resize() }, 100);
+    };
+    if (chart2 != null && chart2 != undefined) {
+      setTimeout(function () { chart2.resize() }, 100);
+    };
+  });
+  /*setTimeout(function () {
     chart1.setOption(options, true);
     chart2.setOption(options, true);
-    $(window).on('resize', function () {
-      if (chart1 != null && chart1 != undefined) {
-        setTimeout(function () { chart1.resize() }, 100);
-      };
-      if (chart2 != null && chart2 != undefined) {
-        setTimeout(function () { chart2.resize() }, 100);
-      };
-    });
-  }, 100);
+  }, 100);*/
 // ADD Class on Visible Element
   var $animation_elements = $('[data-inview]');
   var $window = $(window);
@@ -122,23 +122,23 @@
       var element_top_position = $element.offset().top;
       var element_bottom_position = (element_top_position + element_height);
 
-      if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+      if ((element_top_position <= window_bottom_position) /*&& (element_top_position <= window_bottom_position)*/) {
         if ($($element).attr('data-count')) {
           setTimeout(function () {setConter($element)}, 250);
         } else if ($($element).attr("data-chart") == "1") {
           setTimeout(function () {
-            chart1.clear();
+            //chart1.clear();
             chart1.setOption(options);
-          }, 250);
+          }, 300);
         } else if ($($element).attr("data-chart") == "2") {
           setTimeout(function () {
-            chart2.clear();
+            //chart2.clear();
             chart2.setOption(options);
-          }, 250);
+          }, 300);
         } else {
           setTimeout(function () {$element.addClass('in-view')}, 250);
         }
-      } else {
+      } /*else {
         if ($($element).attr('data-count')) {
           $element.text('0');
           $element.parent('.counter').removeClass('counted');
@@ -149,7 +149,7 @@
         } else {
           $element.removeClass('in-view');
         }
-      }
+      }*/
     });
   };
 
@@ -157,7 +157,23 @@ $window.on('scroll resize', check_if_in_view);
 $window.trigger('scroll');
 
 $(document).ready(function() {
-  console.log('Document Ready!')
+  console.log('Document Ready!');
+
+  var tooltipSlider = document.getElementById('slider-tooltip');
+
+  noUiSlider.create(tooltipSlider, {
+    start: [2000],
+    tooltips: [wNumb({ decimals: 0 })],
+    step: 500,
+    pips: {
+      mode: 'range',
+      density: 10000
+    },
+    range: {
+      'min': 0,
+      'max': 10000
+    }
+  });
 
   $(".twentytwenty-container").twentytwenty({
     no_overlay: true,
@@ -165,7 +181,7 @@ $(document).ready(function() {
     click_to_move: false
   });
 
-  $('#priceTable').owlCarousel({
+  /*$('#priceTable').owlCarousel({
     thumbs: false,
     center: true,
     dots: false,
@@ -182,7 +198,7 @@ $(document).ready(function() {
         items: 3
       }
     }
-  });
+  });*/
 
   $('#clients').owlCarousel({
     thumbs: true,
