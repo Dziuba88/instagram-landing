@@ -54,98 +54,101 @@ html(lang="en")
 
     .screen.packages: .container
       h2 Choose your package
-      .packages__wraper
-        // #priceTable.owl-carousel
-        .package.blue
-          svg.package__icon: use(xlink:href="#user_icon")
-          .package__title BUY FOLLOWERS
-          .package__text How many followers do you need?
-          .package__value +<span id="slider-value">2000</span>
-          .package__slider#slider-tooltip
-          //.package__progress.prc25
-            svg.toggler: use(xlink:href="#toggler_icon")
-            .value: span +2000
-            .min 0
-            .max 50,000
-          .package__sale: span 30% OFF
-          .package__price--old: span $152.99
-          .package__price $19.97
-          button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        //.package.red
-          svg.package__icon: use(xlink:href="#likes_icon")
-          .package__title BUY FOLLOWERS
-          .package__text How many followers do you need?
-          .package__value +2000
-          .package__progress.prc25
-            svg.toggler: use(xlink:href="#toggler_icon")
-            .value: span +2000
-            .min 0
-            .max 50,000
-          .package__sale: span 30% OFF
-          .package__price--old: span $152.99
-          .package__price $19.97
-          button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        //.package.green
-          svg.package__icon: use(xlink:href="#comment_icon")
-          .package__title BUY FOLLOWERS
-          .package__text How many followers do you need?
-          .package__value +2000
-          .package__progress.prc25
-            svg.toggler: use(xlink:href="#toggler_icon")
-            .value: span +2000
-            .min 0
-            .max 50,000
-          .package__sale: span 30% OFF
-          .package__price--old: span $152.99
-          .package__price $19.97
-          button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        //.package.blue
-          svg.package__icon: use(xlink:href="#user_icon")
-          .package__title BUY FOLLOWERS
-          .package__text How many followers do you need?
-          .package__value +2000
-          .package__progress.prc25
-            svg.toggler: use(xlink:href="#toggler_icon")
-            .value: span +2000
-            .min 0
-            .max 50,000
-          .package__sale: span 30% OFF
-          .package__price--old: span $152.99
-          .package__price $19.97
-          button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        //.package.red
-          svg.package__icon: use(xlink:href="#likes_icon")
-          .package__title BUY FOLLOWERS
-          .package__text How many followers do you need?
-          .package__value +2000
-          .package__progress.prc25
-            svg.toggler: use(xlink:href="#toggler_icon")
-            .value: span +2000
-            .min 0
-            .max 50,000
-          .package__sale: span 30% OFF
-          .package__price--old: span $152.99
-          .package__price $19.97
-          button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-        //.package.green
-          svg.package__icon: use(xlink:href="#comment_icon")
-          .package__title BUY FOLLOWERS
-          .package__text How many followers do you need?
-          .package__value +2000
-          .package__progress.prc25
-            svg.toggler: use(xlink:href="#toggler_icon")
-            .value: span +2000
-            .min 0
-            .max 50,000
-          .package__sale: span 30% OFF
-          .package__price--old: span $152.99
-          .package__price $19.97
-          button.btn.package__button(data-mfp-src="#login"): span Grow Profile
-      .packages__footer: .row
-        .col.lg__8.md__8: .packages__footer--wraper
-          h3 Do you need more than<br/>50.000 <span class="text__blue">Followers</span>/<span class="text__red">Likes?</span>
-          button.btn.white(data-mfp-src="#login") YES, I NEED MORE
-        .col.lg__3.md__4: img(src="img/packages_icon.png", alt="")
+      .row.middle
+        .col.md__6: .packages__wraper
+          // #priceTable.owl-carousel
+          .package.blue
+            svg.package__icon: use(xlink:href="#user_icon")
+            .package__title BUY FOLLOWERS
+            .package__text How many followers do you need?
+            .package__value +<span id="slider-value">2000</span>
+            .package__slider#slider-tooltip
+            //.package__progress.prc25
+              svg.toggler: use(xlink:href="#toggler_icon")
+              .value: span +2000
+              .min 0
+              .max 50,000
+            .package__sale: span 30% OFF
+            .package__price--old: span $152.99
+            .package__price $19.97
+            button.btn.package__button(data-mfp-src="#login"): span Grow Profile
+          //.package.red
+            svg.package__icon: use(xlink:href="#likes_icon")
+            .package__title BUY FOLLOWERS
+            .package__text How many followers do you need?
+            .package__value +2000
+            .package__progress.prc25
+              svg.toggler: use(xlink:href="#toggler_icon")
+              .value: span +2000
+              .min 0
+              .max 50,000
+            .package__sale: span 30% OFF
+            .package__price--old: span $152.99
+            .package__price $19.97
+            button.btn.package__button(data-mfp-src="#login"): span Grow Profile
+          //.package.green
+            svg.package__icon: use(xlink:href="#comment_icon")
+            .package__title BUY FOLLOWERS
+            .package__text How many followers do you need?
+            .package__value +2000
+            .package__progress.prc25
+              svg.toggler: use(xlink:href="#toggler_icon")
+              .value: span +2000
+              .min 0
+              .max 50,000
+            .package__sale: span 30% OFF
+            .package__price--old: span $152.99
+            .package__price $19.97
+            button.btn.package__button(data-mfp-src="#login"): span Grow Profile
+          //.package.blue
+            svg.package__icon: use(xlink:href="#user_icon")
+            .package__title BUY FOLLOWERS
+            .package__text How many followers do you need?
+            .package__value +2000
+            .package__progress.prc25
+              svg.toggler: use(xlink:href="#toggler_icon")
+              .value: span +2000
+              .min 0
+              .max 50,000
+            .package__sale: span 30% OFF
+            .package__price--old: span $152.99
+            .package__price $19.97
+            button.btn.package__button(data-mfp-src="#login"): span Grow Profile
+          //.package.red
+            svg.package__icon: use(xlink:href="#likes_icon")
+            .package__title BUY FOLLOWERS
+            .package__text How many followers do you need?
+            .package__value +2000
+            .package__progress.prc25
+              svg.toggler: use(xlink:href="#toggler_icon")
+              .value: span +2000
+              .min 0
+              .max 50,000
+            .package__sale: span 30% OFF
+            .package__price--old: span $152.99
+            .package__price $19.97
+            button.btn.package__button(data-mfp-src="#login"): span Grow Profile
+          //.package.green
+            svg.package__icon: use(xlink:href="#comment_icon")
+            .package__title BUY FOLLOWERS
+            .package__text How many followers do you need?
+            .package__value +2000
+            .package__progress.prc25
+              svg.toggler: use(xlink:href="#toggler_icon")
+              .value: span +2000
+              .min 0
+              .max 50,000
+            .package__sale: span 30% OFF
+            .package__price--old: span $152.99
+            .package__price $19.97
+            button.btn.package__button(data-mfp-src="#login"): span Grow Profile
+        .col.md__6: .packages__footer
+          //: .row
+          //.col.lg__8.md__8: 
+          .packages__footer--wraper
+            h3 Do you need more than<br/>50.000 <span class="text__blue">Followers</span>/<span class="text__red">Likes?</span>
+            button.btn.white(data-mfp-src="#login") YES, I NEED MORE
+          //.col.lg__3.md__4: img(src="img/packages_icon.png", alt="")
 
     .screen.steps: .container
       h2 Become an Instagram<br/>Superstar in 3 steps

@@ -125,23 +125,25 @@
       var element_top_position = $element.offset().top;
       var element_bottom_position = (element_top_position + element_height);
 
-      if ((element_top_position <= window_bottom_position) /*&& (element_top_position <= window_bottom_position)*/) {
+
+
+      if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
         if ($($element).attr('data-count')) {
-          setTimeout(function () {setConter($element)}, 250);
+          setTimeout(function () { setConter($element) }, 250);
         } else if ($($element).attr("data-chart") == "1") {
           setTimeout(function () {
             //chart1.clear();
             chart1.setOption(options);
-          }, 300);
+          }, 250);
         } else if ($($element).attr("data-chart") == "2") {
           setTimeout(function () {
             //chart2.clear();
             chart2.setOption(options);
-          }, 300);
+          }, 250);
         } else {
-          setTimeout(function () {$element.addClass('in-view')}, 250);
+          setTimeout(function () { $element.addClass('in-view') }, 250);
         }
-      } /*else {
+      } else {
         if ($($element).attr('data-count')) {
           $element.text('0');
           $element.parent('.counter').removeClass('counted');
@@ -152,7 +154,7 @@
         } else {
           $element.removeClass('in-view');
         }
-      }*/
+      };
     });
   };
 
