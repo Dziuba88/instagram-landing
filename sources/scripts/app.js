@@ -27,14 +27,6 @@
     },
     series: [{
       data: [{ value: 200, symbol: 'none', label: { show: false } }, 260, 235, 246, { value: 265, symbol: 'none', label: { show: false} }, 260, 479, 620, 790],
-      animation: true,
-      animationThreshold: 2000,
-      animationDuration: 2000000000000,
-      animationEasing: 'cubicInOut',
-      animationDelay: 300000,
-      animationDurationUpdate: 2000,
-      animationEasingUpdate: 'cubicInOut',
-      animationDelayUpdate: 350,
       type: 'line',
       clickable: false,
       lineStyle: {
@@ -76,7 +68,14 @@
         fontWeight: 700,
         fontFamily: '"Avenir"'
       },
-    }]
+    }],
+    animationEasing: 'cubicInOut',
+    animationEasingUpdate: 'cubicInOut',
+    animationDelay: 100,
+    animationDuration: 3000,
+    animationThreshold: 1500,
+    animationDelayUpdate: 100,
+    animationDurationUpdate: 3000
   }
   var chart1 = echarts.init(document.getElementById("chart1"));
   var chart2 = echarts.init(document.getElementById("chart2"));
@@ -132,12 +131,12 @@
           setTimeout(function () { setConter($element) }, 250);
         } else if ($($element).attr("data-chart") == "1") {
           setTimeout(function () {
-            //chart1.clear();
+            chart1.clear();
             chart1.setOption(options);
           }, 250);
         } else if ($($element).attr("data-chart") == "2") {
           setTimeout(function () {
-            //chart2.clear();
+            chart2.clear();
             chart2.setOption(options);
           }, 250);
         } else {
